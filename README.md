@@ -184,7 +184,7 @@ Autres pages :
 ### 9.1. Cloner le projet
 
 ```bash
-git clone https://github.com/mon-compte/safeplaces.git
+git clone https://github.com/dnkoa/safeplaces.git
 cd safeplaces
 ```
 
