@@ -9,9 +9,9 @@
 ## 🔎 0. Captures
 
 <p align="center">
-  <img src="assets/screenshots/new-place.png" width="250"/>
-  <img src="assets/screenshots/place-details.png" width="250"/>
-  <img src="assets/screenshots/places-list.png" width="250"/>
+  <img src="assets/screenshots/new-place.png" style="border:1px solid #555;" width="250"/>
+  <img src="assets/screenshots/place-details.png" style="border:1px solid #555;" width="250"/>
+  <img src="assets/screenshots/places-list.png" style="border:1px solid #555;" width="250"/>
 </p>
 
 ---
