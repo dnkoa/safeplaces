@@ -6,6 +6,16 @@
 
 ---
 
+## 🔎 0. Captures
+
+<p align="center">
+  <img src="assets/screenshots/new-place.png" width="250"/>
+  <img src="assets/screenshots/place-details.png" width="250"/>
+  <img src="assets/screenshots/places-list.png" width="250"/>
+</p>
+
+---
+
 ## 🔎 1. Présentation du projet
 
 **SafePlaces** est une application mobile destinée aux étudiants et citoyens souhaitant identifier rapidement des **lieux sûrs et utiles** autour d’eux :
@@ -39,13 +49,13 @@ Cette application a été développée pour répondre à **6 exigences académiq
 
 ## 🛠️ 3. Fonctionnalités principales
 
-### ✔️ 1. Consultation des lieux
+### ✔️ 3.1. Consultation des lieux
 
 * Liste des lieux enregistrés (nom, catégorie, adresse, GPS)
 * Détail complet d’un lieu : description, téléphone, localisation
 * Appel téléphonique direct depuis la fiche du lieu
 
-### ✔️ 2. Ajout de nouveaux lieux
+### ✔️ 3.2. Ajout de nouveaux lieux
 
 * Nom du lieu
 * Catégorie (hôpital, police, bibliothèque, wifi, etc.)
@@ -56,12 +66,12 @@ Cette application a été développée pour répondre à **6 exigences académiq
   * Récupération automatique via GPS
   * OU recherche via API OpenStreetMap
 
-### ✔️ 3. Carte interactive (optionnelle)
+### ✔️ 3.3. Carte interactive (optionnelle)
 
 * Affichage des lieux sur une carte Leaflet
 * Position actuelle de l’utilisateur
 
-### ✔️ 4. Stockage local
+### ✔️ 3.4. Stockage local
 
 Utilisation de `@ionic/storage-angular` → données enregistrées sur l’appareil :
 
