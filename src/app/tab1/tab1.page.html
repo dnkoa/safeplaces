@@ -1,17 +1,28 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>SafePlaces - Liste</ion-title>
+    <ion-buttons slot="end">
+      <!-- bouton pour aller vers l'écran d'ajout (Tab2) -->
+      <ion-button [routerLink]="['/tabs/tab2']">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list *ngIf="places.length; else empty">
+    <ion-item *ngFor="let p of places" [routerLink]="['/place', p.id]">
+      <ion-label>
+        <h2>{{ p.name }}</h2>
+        <p>{{ p.category }} • {{ p.address }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ng-template #empty>
+    <ion-text class="ion-padding">
+      Aucun lieu enregistré pour l’instant. Clique sur + pour en ajouter un.
+    </ion-text>
+  </ng-template>
 </ion-content>

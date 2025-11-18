@@ -1,17 +1,78 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>Ajouter un lieu</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <ion-item>
+      <ion-input
+        label="Nom du lieu"
+        label-placement="floating"
+        formControlName="name">
+      </ion-input>
+    </ion-item>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-item>
+      <ion-select label="Catégorie" formControlName="category">
+        <ion-select-option value="hopital">Hôpital</ion-select-option>
+        <ion-select-option value="police">Police</ion-select-option>
+        <ion-select-option value="bibliotheque">Bibliothèque</ion-select-option>
+        <ion-select-option value="wifi">Point Wi-Fi</ion-select-option>
+        <ion-select-option value="autre">Autre</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Adresse"
+        label-placement="floating"
+        formControlName="address">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Téléphone"
+        type="tel"
+        label-placement="floating"
+        formControlName="phone">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Latitude"
+        type="number"
+        label-placement="floating"
+        formControlName="lat">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Longitude"
+        type="number"
+        label-placement="floating"
+        formControlName="lng">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea
+        label="Note (optionnelle)"
+        label-placement="floating"
+        formControlName="note">
+      </ion-textarea>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      type="submit"
+      class="ion-margin-top"
+      [disabled]="form.invalid || loading">
+      {{ loading ? 'Enregistrement...' : 'Enregistrer le lieu' }}
+    </ion-button>
+  </form>
 </ion-content>

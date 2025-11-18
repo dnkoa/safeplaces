@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Détails du lieu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="place">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ place.name }}</ion-card-title>
+      <ion-card-subtitle>{{ place.category }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Adresse :</strong> {{ place.address }}</p>
+      <p *ngIf="place.phone"><strong>Téléphone :</strong> {{ place.phone }}</p>
+      <p><strong>Latitude :</strong> {{ place.lat }}</p>
+      <p><strong>Longitude :</strong> {{ place.lng }}</p>
+      <p *ngIf="place.note"><strong>Note :</strong> {{ place.note }}</p>
+
+      <ion-button
+        expand="block"
+        *ngIf="place.phone"
+        [href]="'tel:' + place.phone">
+        Appeler
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        [href]="'https://www.google.com/maps/search/?api=1&query=' + place.lat + ',' + place.lng"
+        target="_blank">
+        Ouvrir dans Google Maps
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
