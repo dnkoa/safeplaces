@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-title>À propos</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,86 +9,75 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>SafePlaces</ion-card-title>
-      <ion-card-subtitle>Version 1.0</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
-      <p>
-        <strong>SafePlaces</strong> est une application mobile qui aide les étudiants 
-        à trouver rapidement des lieux importants : hôpitaux, commissariats, points Wi-Fi, 
-        bibliothèques, et autres endroits utiles.
-      </p>
-
-      <p>
-        L'application fonctionne même hors ligne grâce au stockage local, 
-        et permet d’enregistrer vos propres lieux personnalisés.
-      </p>
-
-      <p>
-        Elle exploite aussi des fonctionnalités du téléphone comme le 
-        <strong>GPS</strong> et l’<strong>appel téléphonique</strong>.
-      </p>
-
-      <ion-item lines="none">
-        <ion-icon name="pin" slot="start"></ion-icon>
-        <ion-label>Géolocalisation : activée</ion-label>
-      </ion-item>
-
-      <ion-item lines="none">
-        <ion-icon name="call" slot="start"></ion-icon>
-        <ion-label>Appel téléphonique : activé</ion-label>
-      </ion-item>
-
-      <ion-item lines="none">
-        <ion-icon name="cloud-outline" slot="start"></ion-icon>
-        <ion-label>Service externe : API OpenStreetMap</ion-label>
-      </ion-item>
+      SafePlaces est une application mobile éducative permettant
+      d’enregistrer, modifier et localiser des lieux importants
+      (écoles, hôpitaux, bibliothèques, points Wi-Fi, centres éducatifs, etc.)
+      en se basant sur les fonctionnalités natives d’un smartphone Android.
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Développement</ion-card-title>
+      <ion-card-title>Fonctionnalités principales</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <p>
-        L’application est développée avec :
-      </p>
-
       <ion-list>
-        <ion-item lines="none">
-          <ion-icon name="logo-angular" slot="start"></ion-icon>
-          <ion-label>Ionic 7 + Angular</ion-label>
+        <ion-item>
+          <ion-label>✔ Enregistrement de lieux éducatifs</ion-label>
         </ion-item>
-
-        <ion-item lines="none">
-          <ion-icon name="phone-portrait" slot="start"></ion-icon>
-          <ion-label>Capacitor (Android)</ion-label>
+        <ion-item>
+          <ion-label>✔ Modification complète des informations d’un lieu</ion-label>
         </ion-item>
-
-        <ion-item lines="none">
-          <ion-icon name="save" slot="start"></ion-icon>
-          <ion-label>Stockage local (Ionic Storage)</ion-label>
+        <ion-item>
+          <ion-label>✔ Suppression d’un lieu</ion-label>
         </ion-item>
-
-        <ion-item lines="none">
-          <ion-icon name="navigate" slot="start"></ion-icon>
-          <ion-label>GPS (Capacitor Geolocation)</ion-label>
+        <ion-item>
+          <ion-label>✔ Sélection automatique des coordonnées GPS (position actuelle)</ion-label>
         </ion-item>
-
-        <ion-item lines="none">
-          <ion-icon name="earth" slot="start"></ion-icon>
-          <ion-label>OpenStreetMap API (adresse → coordonnées)</ion-label>
+        <ion-item>
+          <ion-label>✔ Distance calculée entre l’utilisateur et chaque lieu</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>✔ Affichage des lieux classés du plus proche au plus éloigné</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>✔ Stockage local (fonctionnement hors-ligne)</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>✔ Ouverture directe du lieu dans Google Maps</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
 
-  <ion-footer>
-    <ion-text class="ion-text-center ion-padding">
-      Développé par Dominique Nkoa-M1 ISOC – 2025
-    </ion-text>
-  </ion-footer>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Informations techniques</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Version : {{ version }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Dernière mise à jour : {{ lastUpdate }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Ionic + Angular (Standalone Components)</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Capacitor Geolocation</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Stockage local via StorageService</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

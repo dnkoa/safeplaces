@@ -29,4 +29,26 @@ export class PlaceService {
     all.push(newPlace);
     await this.storage.set(PLACES_KEY, all);
   }
+
+  // 🔹 Mise à jour d’un lieu existant
+  async update(id: string, changes: Partial<Place>): Promise<void> {
+    const all = await this.getAll();
+    const index = all.findIndex((p) => p.id === id);
+    if (index === -1) return;
+
+    all[index] = {
+      ...all[index],
+      ...changes,
+      id: all[index].id, // on ne touche pas à l'id
+    };
+
+    await this.storage.set(PLACES_KEY, all);
+  }
+
+  // 🔹 Suppression d’un lieu
+  async delete(id: string): Promise<void> {
+    const all = await this.getAll();
+    const filtered = all.filter((p) => p.id !== id);
+    await this.storage.set(PLACES_KEY, filtered);
+  }
 }

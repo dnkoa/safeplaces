@@ -1,9 +1,14 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
+
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'safeplaces',
-  webDir: 'www'
+  appId: 'com.safeplaces.app',
+  appName: 'SafePlaces',
+  webDir: 'www',
+  android: {
+    backgroundColor: '#FFFFFF' 
+  }
 };
 
 export default config;
+

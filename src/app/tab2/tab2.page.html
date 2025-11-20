@@ -6,6 +6,7 @@
 
 <ion-content class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="save()">
+
     <ion-item>
       <ion-input
         label="Nom du lieu"
@@ -15,7 +16,9 @@
     </ion-item>
 
     <ion-item>
-      <ion-select label="Catégorie" formControlName="category">
+      <ion-select
+        label="Catégorie"
+        formControlName="category">
         <ion-select-option value="hopital">Hôpital</ion-select-option>
         <ion-select-option value="police">Police</ion-select-option>
         <ion-select-option value="bibliotheque">Bibliothèque</ion-select-option>
@@ -59,10 +62,20 @@
       </ion-input>
     </ion-item>
 
+    <!-- Bouton pour utiliser la position GPS actuelle -->
+    <ion-button
+      type="button"
+      expand="block"
+      class="ion-margin-vertical"
+      (click)="useCurrentLocation()"
+      [disabled]="loadingLocation">
+      {{ loadingLocation ? 'Localisation en cours...' : 'Utiliser ma position actuelle' }}
+    </ion-button>
+
     <ion-item>
       <ion-textarea
-        label="Note (optionnelle)"
-        label-placement="floating"
+        label="Note"
+        label-placement="stacked"
         formControlName="note">
       </ion-textarea>
     </ion-item>
